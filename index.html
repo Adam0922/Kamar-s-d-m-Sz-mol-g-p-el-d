@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>matek gep</title>
+		<style>
+			h1 {
+				text-align: center;
+			}
+			h3{
+				text-align: center;
+				margin-bottom: 50px;
+			}
+			input{
+				font-size: 1.5em;
+				width: 140px;
+				float: left;
+				margin-right: 10px;
+			}
+			#selOps{
+				font-size: 1.67em;
+				width: 70px;
+				float: left;
+				margin-right: 10px;
+			}
+			#sciOps{
+				font-size: 1.65em;
+				width: 70px;
+				float: left;
+				margin-right: 10px;
+			}
+			button{
+				font-size: 1.5em;
+				float: left;
+				margin-right: 10px;
+			}
+			#result,
+			#errormessage {
+				color: red;
+			}
+			#calcForm
+			{
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 50px;
+				padding: 30px;
+				border: 1px solid gray;
+				width: 30%;
+			}
+			#sciBox{
+				width: 20px;
+				float: left;
+			}
+
+			#sciOps,
+			#sciBtn{
+				display: none;
+			}
+			#sciBlock,
+			#lblSciBox{
+				display: inline-block;
+			}
+			.topOutput {
+				font-size: 2em;
+				color: red;
+				padding: 10px;
+				border: 1px dashed gray;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Matek gep</h1>
+		<h3><span class="modeTxt">[Normal mode]</span></h3>
+		<p id="outBox">
+			<h1><span class="topOutput">0</span></h1>
+		</p>
+		<form action="" id="calcForm">
+			<p><span id="errorMessage"></span></p>
+			
+				<input type="number" name="numA" placeholder="A szam" />
+				<select name="selops" id="selOps">
+					<option value="0" selected>+</option>
+					<option value="1">-</option>
+					<option value="2">*</option>
+					<option value="3">/</option>
+				</select>
+				<select name="sciops" id="sciOps" onchange="changeSciFunct()">
+					<option value="0" title="százalél" selected>%</option>
+					<option value="1" title="hatvány">x^</option>
+           			<option value="2" title="négyzetgyök">√</option>
+            		<option value="3" title="köbgyök">∛</option>
+					<option value="4" title="logaritmus">log</option>
+					<option value="5" title="színusz">sin</option>
+					<option value="6" title="koszinus">cos</option>
+				</select>
+				<input type="number" name="numB" placeholder="B szam" />
+				<button type="button" id="defBtn" onclick="calcNum()">Számol</button>
+				<button type="button" id="sciBtn" onclick="calciNum()">Számol</button>
+				<button type="button" onclick="formReset()">Törlés</button><br><br>
+				<p id="sciBlock">
+					<input type="checkbox" name="sciBox" id="sciBox" onclick="cbSci()">
+					<label for="">Tudományos</label>
+				</p>
+		</form>
+		<script type="text/javascript" src="calc.js"></script>
+	</body>
+
+</html>
